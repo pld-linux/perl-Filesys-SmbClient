@@ -1,0 +1,39 @@
+--- ./Makefile.PL.org	Sun Feb 24 02:46:06 2002
++++ ./Makefile.PL	Tue Jun  4 00:27:53 2002
+@@ -6,18 +6,20 @@
+ ($^O =~ m/AIX/i) ? ($ccfl = '-qcpluscmt') : ($ccfl = '');
+ 
+ # path libsmbclient.h
+-my $include = prompt("Where can I find libsmbclient.h ?","/usr/include");
++my $include = "/usr/include";
++#prompt("Where can I find libsmbclient.h ?","/usr/include");
+ warn_user("$include/libsmbclient.h") if (!-r "$include/libsmbclient.h");
+ 
+ # path libsmbclient.so
+-my $lib = prompt("Where can I find libsmbclient.so ?","/usr/lib");
++my $lib = "/usr/lib";
++#prompt("Where can I find libsmbclient.so ?","/usr/lib");
+ warn_user("libsmbclient.so") if (!-r "$lib/libsmbclient.so");
+ 
+ # tests demande ?
+-my $ans = 
+-  prompt("Do you want make tests ?(you will be prompted for server / \n".
+-	   "worgroup / share / user / password to make read write access.",
+-	   "yes");
++my $ans = "no";
++#  prompt("Do you want make tests ?(you will be prompted for server / \n".
++#	   "worgroup / share / user / password to make read write access.",
++#	   "yes");
+ if ($ans =~ /^y(es)?$/i) 
+   {
+     my $server = prompt("Server ?","localhost");
+@@ -31,7 +33,8 @@
+   }
+ 
+ # Trace for debug
+-$ans = prompt("Compile module with trace to STDERR ?", "no");
++$ans = "no";
++#prompt("Compile module with trace to STDERR ?", "no");
+ if ($ans =~ /^y(es)?$/i) { $define = "-DVERBOSE"; }
+ 
+ # Create config.h for alloca via configure
