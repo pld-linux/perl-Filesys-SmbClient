@@ -29,7 +29,7 @@ Version:	1.4
 Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
-Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 Patch0:		%{name}-notest.patch
 BuildRequires:	autoconf
 BuildRequires:	libsmbclient-devel
