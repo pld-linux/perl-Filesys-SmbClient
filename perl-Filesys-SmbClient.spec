@@ -1,5 +1,8 @@
 # TODO:
 # - make cgi scripts from doc as separate packages
+#
+# Conditional build:
+# _without_tests - do not perform "make test"
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Filesys
 %define		pnam	SmbClient
@@ -22,7 +25,7 @@ Summary(uk):	Модуль для Perl Filesys::SmbClient
 Summary(zh_CN):	Filesys::SmbClient Perl дё©И
 Name:		perl-Filesys-SmbClient
 Version:	1.1
-Release:	3
+Release:	4
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -95,6 +98,8 @@ autoconf
 perl Makefile.PL
 %{__make}
 
+%{!?_without_tests:%{__make} test}
+
 %install
 rm -rf $RPM_BUILD_ROOT
 
@@ -109,8 +114,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_sitearch}/Filesys
 %{perl_sitearch}/Filesys/*.pm
 %dir %{perl_sitearch}/auto/Filesys/SmbClient
-%attr(755,root,root) %{perl_sitearch}/auto/Filesys/SmbClient/SmbClient.so
+%{perl_sitearch}/auto/Filesys/SmbClient/autosplit.ix
 %{perl_sitearch}/auto/Filesys/SmbClient/SmbClient.bs
+%attr(755,root,root) %{perl_sitearch}/auto/Filesys/SmbClient/SmbClient.so
 # this is NOT duplicate:
 %dir %{perl_sitearch}/auto/Filesys
 %dir %{perl_sitearch}/auto/Filesys/Smbclient
