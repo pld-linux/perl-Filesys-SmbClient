@@ -2,7 +2,7 @@
 # - make cgi scripts from doc as separate packages
 #
 # Conditional build:
-# _without_tests - do not perform "make test"
+%bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Filesys
@@ -25,12 +25,12 @@ Summary(sv):	Filesys::SmbClient Perlmodul
 Summary(uk):	Модуль для Perl Filesys::SmbClient
 Summary(zh_CN):	Filesys::SmbClient Perl дё©И
 Name:		perl-Filesys-SmbClient
-Version:	1.4
-Release:	2
-License:	GPL
+Version:	1.5
+Release:	1
+License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	642ff0516bbd12d6b6118e8d3e210491
+# Source0-md5:	d5fdb54c7a36053bbf0e4f77c17fc885
 Patch0:		%{name}-notest.patch
 BuildRequires:	autoconf
 BuildRequires:	libsmbclient-devel
@@ -102,7 +102,7 @@ Filesys::SmbClient Perl дё©И
 	INSTALLDIRS=vendor
 %{__make}
 
-%{!?_without_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
