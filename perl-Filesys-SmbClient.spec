@@ -16,7 +16,7 @@ Summary(fr):	Module Perl Filesys::SmbClient
 Summary(it):	Modulo di Perl Filesys::SmbClient
 Summary(ja):	Filesys::SmbClient Perl ¥â¥¸¥å¡¼¥ë
 Summary(ko):	Filesys::SmbClient ÆÞ ¸ðÁÙ
-Summary(no):	Perlmodul Filesys::SmbClient
+Summary(nb):	Perlmodul Filesys::SmbClient
 Summary(pl):	Modu³ Perla Filesys::SmbClient
 Summary(pt):	Módulo de Perl Filesys::SmbClient
 Summary(pt_BR):	Módulo Perl Filesys::SmbClient
@@ -67,7 +67,7 @@ Filesys::SmbClient Perl ¥â¥¸¥å¡¼¥ë.
 %description -l ko
 Filesys::SmbClient ÆÞ ¸ðÁÙ.
 
-%description -l no
+%description -l nb
 Perlmodul Filesys::SmbClient.
 
 %description -l pl
