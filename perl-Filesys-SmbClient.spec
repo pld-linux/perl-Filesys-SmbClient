@@ -22,7 +22,7 @@ Summary(uk):	Модуль для Perl Filesys::SmbClient
 Summary(zh_CN):	Filesys::SmbClient Perl дё©И
 Name:		perl-Filesys-SmbClient
 Version:	1.1
-Release:	2
+Release:	3
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -106,6 +106,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes smb2www-2.cgi smb2www.css
+%dir %{perl_sitearch}/Filesys
 %{perl_sitearch}/Filesys/*.pm
 %dir %{perl_sitearch}/auto/Filesys/SmbClient
 %attr(755,root,root) %{perl_sitearch}/auto/Filesys/SmbClient/SmbClient.so
