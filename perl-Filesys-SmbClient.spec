@@ -25,7 +25,7 @@ Summary(sv):	Filesys::SmbClient Perlmodul
 Summary(uk):	Модуль для Perl Filesys::SmbClient
 Summary(zh_CN):	Filesys::SmbClient Perl дё©И
 Name:		perl-Filesys-SmbClient
-Version:	1.2
+Version:	1.4
 Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
