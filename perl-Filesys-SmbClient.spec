@@ -118,11 +118,11 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_sitearch}/auto/Filesys
 %dir %{perl_sitearch}/auto/Filesys/SmbClient
 # empty autosplit.ix
-#%{perl_sitearch}/auto/Filesys/SmbClient/autosplit.ix
+#%%{perl_sitearch}/auto/Filesys/SmbClient/autosplit.ix
 %{perl_sitearch}/auto/Filesys/SmbClient/SmbClient.bs
 %attr(755,root,root) %{perl_sitearch}/auto/Filesys/SmbClient/SmbClient.so
 # this is NOT duplicate:
 #%dir %{perl_sitearch}/auto/Filesys/Smbclient
 #%dir %{perl_sitearch}/auto/Filesys/Smbclient/libauthSamba
-#%{perl_sitearch}/auto/Filesys/Smbclient/libauthSamba/libauthSamba.a
+#%%{perl_sitearch}/auto/Filesys/Smbclient/libauthSamba/libauthSamba.a
 %{_mandir}/man3/*
