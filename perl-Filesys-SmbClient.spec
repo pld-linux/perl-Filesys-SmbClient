@@ -5,8 +5,8 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	Filesys
-%define	pnam	SmbClient
+%define		pdir	Filesys
+%define		pnam	SmbClient
 Summary:	Filesys::SmbClient - interface for access Samba filesystem
 Summary(pl):	Filesys::SmbClient - interfejs dostêpu do systemu plików Samby
 Name:		perl-Filesys-SmbClient
