@@ -3,8 +3,8 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Filesys
 %define	pnam	SmbClient
-Summary:	Filesys-SmbClient perl module
-Summary(pl):	Modu³ perla Filesys-SmbClient
+Summary:	Filesys::SmbClient perl module
+Summary(pl):	Modu³ perla Filesys::SmbClient
 Name:		perl-Filesys-SmbClient
 Version:	1.1
 Release:	1
@@ -18,10 +18,10 @@ BuildRequires:	libsmbclient-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Filesys-SmbClient.
+Filesys::SmbClient.
 
 %description -l pl
-Filesys-SmbClient.
+Filesys::SmbClient.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
