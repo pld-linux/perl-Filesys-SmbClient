@@ -26,7 +26,7 @@ Summary(uk):	Модуль для Perl Filesys::SmbClient
 Summary(zh_CN):	Filesys::SmbClient Perl дё©И
 Name:		perl-Filesys-SmbClient
 Version:	1.4
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -34,7 +34,7 @@ Patch0:		%{name}-notest.patch
 BuildRequires:	autoconf
 BuildRequires:	libsmbclient-devel
 BuildRequires:	perl >= 5.6
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define _noautocompressdoc *.cgi
@@ -97,7 +97,8 @@ Filesys::SmbClient Perl дё©И
 %build
 %{__autoconf}
 %configure
-%{__perl} Makefile.PL
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor 
 %{__make}
 
 %{!?_without_tests:%{__make} test}
@@ -113,16 +114,16 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes smb2www-2.cgi smb2www.css
-%dir %{perl_sitearch}/Filesys
-%{perl_sitearch}/Filesys/*.pm
-%dir %{perl_sitearch}/auto/Filesys
-%dir %{perl_sitearch}/auto/Filesys/SmbClient
+%dir %{perl_vendorarch}/Filesys
+%{perl_vendorarch}/Filesys/*.pm
+%dir %{perl_vendorarch}/auto/Filesys
+%dir %{perl_vendorarch}/auto/Filesys/SmbClient
 # empty autosplit.ix
-#%%{perl_sitearch}/auto/Filesys/SmbClient/autosplit.ix
-%{perl_sitearch}/auto/Filesys/SmbClient/SmbClient.bs
-%attr(755,root,root) %{perl_sitearch}/auto/Filesys/SmbClient/SmbClient.so
+#%%{perl_vendorarch}/auto/Filesys/SmbClient/autosplit.ix
+%{perl_vendorarch}/auto/Filesys/SmbClient/SmbClient.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Filesys/SmbClient/SmbClient.so
 # this is NOT duplicate:
-#%dir %{perl_sitearch}/auto/Filesys/Smbclient
-#%dir %{perl_sitearch}/auto/Filesys/Smbclient/libauthSamba
-#%%{perl_sitearch}/auto/Filesys/Smbclient/libauthSamba/libauthSamba.a
+#%dir %{perl_vendorarch}/auto/Filesys/Smbclient
+#%dir %{perl_vendorarch}/auto/Filesys/Smbclient/libauthSamba
+#%%{perl_vendorarch}/auto/Filesys/Smbclient/libauthSamba/libauthSamba.a
 %{_mandir}/man3/*
