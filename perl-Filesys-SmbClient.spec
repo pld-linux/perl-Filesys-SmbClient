@@ -7,23 +7,8 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Filesys
 %define		pnam	SmbClient
-Summary:	Filesys::SmbClient Perl module
-Summary(cs):	Modul Filesys::SmbClient pro Perl
-Summary(da):	Perlmodul Filesys::SmbClient
-Summary(de):	Filesys::SmbClient Perl Modul
-Summary(es):	Módulo de Perl Filesys::SmbClient
-Summary(fr):	Module Perl Filesys::SmbClient
-Summary(it):	Modulo di Perl Filesys::SmbClient
-Summary(ja):	Filesys::SmbClient Perl ¥â¥¸¥å¡¼¥ë
-Summary(ko):	Filesys::SmbClient ÆÞ ¸ðÁÙ
-Summary(nb):	Perlmodul Filesys::SmbClient
-Summary(pl):	Modu³ Perla Filesys::SmbClient
-Summary(pt):	Módulo de Perl Filesys::SmbClient
-Summary(pt_BR):	Módulo Perl Filesys::SmbClient
-Summary(ru):	íÏÄÕÌØ ÄÌÑ Perl Filesys::SmbClient
-Summary(sv):	Filesys::SmbClient Perlmodul
-Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl Filesys::SmbClient
-Summary(zh_CN):	Filesys::SmbClient Perl Ä£¿é
+Summary:	Filesys::SmbClient - interface for access Samba filesystem
+Summary(pl):	Filesys::SmbClient - interfejs dostêpu do systemu plików Samby
 Name:		perl-Filesys-SmbClient
 Version:	1.5
 Release:	1
@@ -41,55 +26,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define _noautocompressdoc *.cgi
 
 %description
-Filesys::SmbClient Perl module.
-
-%description -l cs
-Modul Filesys::SmbClient pro Perl.
-
-%description -l da
-Perlmodul Filesys::SmbClient.
-
-%description -l de
-Filesys::SmbClient Perl Modul.
-
-%description -l es
-Módulo de Perl Filesys::SmbClient.
-
-%description -l fr
-Module Perl Filesys::SmbClient.
-
-%description -l it
-Modulo di Perl Filesys::SmbClient.
-
-%description -l ja
-Filesys::SmbClient Perl ¥â¥¸¥å¡¼¥ë.
-
-%description -l ko
-Filesys::SmbClient ÆÞ ¸ðÁÙ.
-
-%description -l nb
-Perlmodul Filesys::SmbClient.
+Filesys::SmbClient Perl module provides interface to access routine
+defined in libsmbclient.so and, using this routine, Samba filesystem.
 
 %description -l pl
-Modu³ Perla Filesys::SmbClient.
-
-%description -l pt
-Módulo de Perl Filesys::SmbClient.
-
-%description -l pt_BR
-Módulo Perl Filesys::SmbClient.
-
-%description -l ru
-íÏÄÕÌØ ÄÌÑ Perl Filesys::SmbClient.
-
-%description -l sv
-Filesys::SmbClient Perlmodul.
-
-%description -l uk
-íÏÄÕÌØ ÄÌÑ Perl Filesys::SmbClient.
-
-%description -l zh_CN
-Filesys::SmbClient Perl Ä£¿é
+Modu³ Perla Filesys::SmbClient stanowi interfejs dostêpu do procedury
+zdefiniowanej w libsmbclient.so i, za po¶rednictwem tej procedury, do
+systemu plików Samby.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
