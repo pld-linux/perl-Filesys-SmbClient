@@ -31,9 +31,10 @@ License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 Patch0:		%{name}-notest.patch
-BuildRequires:	rpm-perlprov >= 3.0.3-16
-BuildRequires:	perl >= 5.6
+BuildRequires:	autoconf
 BuildRequires:	libsmbclient-devel
+BuildRequires:	perl >= 5.6
+BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define _noautocompressdoc *.cgi
@@ -94,7 +95,7 @@ Filesys::SmbClient Perl Ä£¿é
 %patch0 -p1
 
 %build
-autoconf
+%{__autoconf}
 %configure
 perl Makefile.PL
 %{__make}
