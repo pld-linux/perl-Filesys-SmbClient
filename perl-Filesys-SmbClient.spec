@@ -11,7 +11,7 @@ Summary:	Filesys::SmbClient - interface for access Samba filesystem
 Summary(pl):	Filesys::SmbClient - interfejs dostêpu do systemu plików Samby
 Name:		perl-Filesys-SmbClient
 Version:	1.5
-Release:	2
+Release:	3
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
