@@ -3,6 +3,7 @@
 #
 # Conditional build:
 # _without_tests - do not perform "make test"
+#
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Filesys
 %define		pnam	SmbClient
@@ -24,8 +25,8 @@ Summary(sv):	Filesys::SmbClient Perlmodul
 Summary(uk):	Модуль для Perl Filesys::SmbClient
 Summary(zh_CN):	Filesys::SmbClient Perl дё©И
 Name:		perl-Filesys-SmbClient
-Version:	1.1
-Release:	4
+Version:	1.2
+Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -113,13 +114,14 @@ rm -rf $RPM_BUILD_ROOT
 %doc Changes smb2www-2.cgi smb2www.css
 %dir %{perl_sitearch}/Filesys
 %{perl_sitearch}/Filesys/*.pm
+%dir %{perl_sitearch}/auto/Filesys
 %dir %{perl_sitearch}/auto/Filesys/SmbClient
-%{perl_sitearch}/auto/Filesys/SmbClient/autosplit.ix
+# empty autosplit.ix
+#%{perl_sitearch}/auto/Filesys/SmbClient/autosplit.ix
 %{perl_sitearch}/auto/Filesys/SmbClient/SmbClient.bs
 %attr(755,root,root) %{perl_sitearch}/auto/Filesys/SmbClient/SmbClient.so
 # this is NOT duplicate:
-%dir %{perl_sitearch}/auto/Filesys
-%dir %{perl_sitearch}/auto/Filesys/Smbclient
-%dir %{perl_sitearch}/auto/Filesys/Smbclient/libauthSamba
-%{perl_sitearch}/auto/Filesys/Smbclient/libauthSamba/libauthSamba.a
+#%dir %{perl_sitearch}/auto/Filesys/Smbclient
+#%dir %{perl_sitearch}/auto/Filesys/Smbclient/libauthSamba
+#%{perl_sitearch}/auto/Filesys/Smbclient/libauthSamba/libauthSamba.a
 %{_mandir}/man3/*
