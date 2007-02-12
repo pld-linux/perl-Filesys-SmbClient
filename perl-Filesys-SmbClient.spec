@@ -8,7 +8,7 @@
 %define		pdir	Filesys
 %define		pnam	SmbClient
 Summary:	Filesys::SmbClient - interface for access Samba filesystem
-Summary(pl):	Filesys::SmbClient - interfejs dostêpu do systemu plików Samby
+Summary(pl.UTF-8):   Filesys::SmbClient - interfejs dostÄ™pu do systemu plikÃ³w Samby
 Name:		perl-Filesys-SmbClient
 Version:	1.5
 Release:	3
@@ -28,10 +28,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Filesys::SmbClient Perl module provides interface to access routine
 defined in libsmbclient.so and, using this routine, Samba filesystem.
 
-%description -l pl
-Modu³ Perla Filesys::SmbClient stanowi interfejs dostêpu do procedury
-zdefiniowanej w libsmbclient.so i, za po¶rednictwem tej procedury, do
-systemu plików Samby.
+%description -l pl.UTF-8
+ModuÅ‚ Perla Filesys::SmbClient stanowi interfejs dostÄ™pu do procedury
+zdefiniowanej w libsmbclient.so i, za poÅ›rednictwem tej procedury, do
+systemu plikÃ³w Samby.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
