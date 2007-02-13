@@ -8,7 +8,7 @@
 %define		pdir	Filesys
 %define		pnam	SmbClient
 Summary:	Filesys::SmbClient - interface for access Samba filesystem
-Summary(pl.UTF-8):   Filesys::SmbClient - interfejs dostępu do systemu plików Samby
+Summary(pl.UTF-8):	Filesys::SmbClient - interfejs dostępu do systemu plików Samby
 Name:		perl-Filesys-SmbClient
 Version:	1.5
 Release:	3
