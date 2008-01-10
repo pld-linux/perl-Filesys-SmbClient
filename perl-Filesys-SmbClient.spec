@@ -44,6 +44,7 @@ systemu plików Samby.
 	VERSION_FROM=>"SmbClient.pm")' \
 	INSTALLDIRS=vendor
 %{__make} \
+	CC="%{__cc}" \
 	OPTIMIZE="%{rpmcflags}"
 
 %{?with_tests:%{__make} test}
