@@ -14,8 +14,9 @@ Version:	1.5
 Release:	4
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Filesys/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	d5fdb54c7a36053bbf0e4f77c17fc885
+URL:		http://search.cpan.org/dist/Filesys-SmbClient/
 BuildRequires:	autoconf
 BuildRequires:	libsmbclient-devel
 BuildRequires:	perl-devel >= 1:5.8.0
