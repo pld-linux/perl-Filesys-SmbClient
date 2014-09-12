@@ -68,7 +68,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/auto/Filesys/SmbClient
 # empty autosplit.ix
 #%%{perl_vendorarch}/auto/Filesys/SmbClient/autosplit.ix
-%{perl_vendorarch}/auto/Filesys/SmbClient/SmbClient.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Filesys/SmbClient/SmbClient.so
 # this is NOT duplicate:
 #%dir %{perl_vendorarch}/auto/Filesys/Smbclient
