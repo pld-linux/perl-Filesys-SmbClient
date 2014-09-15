@@ -44,13 +44,12 @@ systemu plików Samby.
 %build
 %{__autoconf}
 %configure
-%{__perl} -MExtUtils::MakeMaker -e 'WriteMakefile(NAME=>"Filesys::SmbClient",
-	OBJECT=>"libauthSamba.o SmbClient.o", LIBS=>["-lsmbclient"],
-	VERSION_FROM=>"SmbClient.pm")' \
+%{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
+
 %{__make} \
 	CC="%{__cc}" \
-	OPTIMIZE="%{rpmcflags} `pkg-config --cflags smbclient`"
+	CFLAGS="%{rpmcflags}"
 
 %{?with_tests:%{__make} test}
 
