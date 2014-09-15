@@ -1,0 +1,55 @@
+Description: Remove prompts in Makefile;
+ find libdir and includedir with pkg-config
+Forwarded: no
+Author: Damyan Ivanov <dmn@debian.org>
+Reviewed-By: Xavier Guimard <x.guimard@free.fr>
+ gregor herrmann <gregoa@debian.org>
+Last-Update: 2013-11-03
+
+--- a/Makefile.PL
++++ b/Makefile.PL
+@@ -6,20 +6,24 @@ my ($define, $ccfl);
+ ($^O =~ m/AIX/i) ? ($ccfl = '-qcpluscmt') : ($ccfl = '');
+ 
+ # path libsmbclient.h
+-my $include = try_to_find("libsmbclient.h");
+-$include = prompt("Where can I find libsmbclient.h ?", $include);
+-warn_user("$include/libsmbclient.h") if (!-r "$include/libsmbclient.h");
++#my $include = try_to_find("libsmbclient.h");
++#$include = prompt("Where can I find libsmbclient.h ?", $include);
++#warn_user("$include/libsmbclient.h") if (!-r "$include/libsmbclient.h");
++my $include = qx/pkg-config --variable=includedir smbclient/;
+ 
+ # path libsmbclient.so
+-my $lib = try_to_find("libsmbclient.so");
+-$lib = prompt("Where can I find libsmbclient.so ?",$lib);
+-warn_user("libsmbclient.so") if (!-r "$lib/libsmbclient.so");
++#my $lib = try_to_find("libsmbclient.so");
++#$lib = prompt("Where can I find libsmbclient.so ?",$lib);
++#warn_user("libsmbclient.so") if (!-r "$lib/libsmbclient.so");
++my $lib = qx/pkg-config --variable=libdir smbclient/;
+ 
+ # tests demande ?
+-my $ans = 
+-  prompt("Do you want make tests ?(you will be prompted for server / \n".
+-	   "worgroup / share / user / password to make read write access.",
+-	   "yes");
++#my $ans =
++#  prompt("Do you want make tests ?(you will be prompted for server / \n".
++#	   "worgroup / share / user / password to make read write access.",
++#	   "yes");
++my $ans = 'n';
++
+ if ($ans =~ /^y(es)?$/i) 
+   {
+     my $server = prompt("Server ?","localhost");
+@@ -33,7 +37,8 @@ if ($ans =~ /^y(es)?$/i)
+   }
+ 
+ # Trace for debug
+-$ans = prompt("Compile module with trace to STDERR ?", "no");
++#$ans = prompt("Compile module with trace to STDERR ?", "no");
++$ans = 'n';
+ if ($ans =~ /^y(es)?$/i) { $define = "-DVERBOSE"; }
+ 
+ # Create config.h for alloca via configure

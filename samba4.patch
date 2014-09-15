@@ -1,0 +1,20 @@
+Description: close() in gone from libsmbclient.h in samba 4.0 apparently
+Origin: vendor
+Forwarded: no
+Author: gregor herrmann <gregoa@debian.org>
+Last-Update: 2013-11-03
+
+--- a/SmbClient.xs
++++ b/SmbClient.xs
+@@ -454,11 +454,7 @@
+  * Close file desriptor fd
+  *
+  */
+-#ifdef HAVE_CLOSEFN
+   RETVAL=context->close_fn(context, fd);
+-#else
+-  RETVAL=context->close(context, fd);
+-#endif
+ OUTPUT:
+   RETVAL
+ 

@@ -10,13 +10,15 @@
 Summary:	Filesys::SmbClient - interface for access Samba filesystem
 Summary(pl.UTF-8):	Filesys::SmbClient - interfejs dostępu do systemu plików Samby
 Name:		perl-Filesys-SmbClient
-Version:	1.5
-Release:	9
+Version:	3.2
+Release:	1
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Filesys/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	d5fdb54c7a36053bbf0e4f77c17fc885
+# Source0-md5:	8a4205fe748aac7f43fb2a0e8ef502b2
 URL:		http://search.cpan.org/dist/Filesys-SmbClient/
+Patch0:		Makefile.patch
+Patch1:		samba4.patch
 BuildRequires:	autoconf
 BuildRequires:	libsmbclient-devel
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -36,6 +38,8 @@ systemu plików Samby.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
+%patch0 -p1
+%patch1 -p1
 
 %build
 %{__autoconf}
@@ -46,7 +50,7 @@ systemu plików Samby.
 	INSTALLDIRS=vendor
 %{__make} \
 	CC="%{__cc}" \
-	OPTIMIZE="%{rpmcflags}"
+	OPTIMIZE="%{rpmcflags} `pkg-config --cflags smbclient`"
 
 %{?with_tests:%{__make} test}
 
